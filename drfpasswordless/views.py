@@ -168,6 +168,7 @@ class VerifyAliasFromCallbackToken(APIView):
     This verifies an alias on correct callback token entry using the same logic as auth.
     Should be refactored at some point.
     """
+    permission_classes = (IsAuthenticated,)
     serializer_class = CallbackTokenVerificationSerializer
 
     def post(self, request, *args, **kwargs):
